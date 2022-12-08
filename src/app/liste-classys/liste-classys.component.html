@@ -1,0 +1,30 @@
+<div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <app-update-classy [classy]="updatedClass"
+    (classyUpdated)= "classyUpdated($event)"
+    [ajout]="ajout">
+        
+    </app-update-classy>
+    </div>
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id Class</th>
+                        <th>Nom Class</th>
+                        <th>Description Class</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let cls of classy">
+                    <tr>
+                        <td>{{cls.idClass}}</td>
+                        <td>{{cls.nomClass}}</td>
+                        <td>{{cls.descriptionClass}}</td>
+                        <td><a class="btn btn-success" (click)="updateClass(cls)">Editer</a></td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

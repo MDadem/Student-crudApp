@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Etudiant :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Etudiant</label>
+            <input type="text" [(ngModel)]="newStudent.idStudent"  name="idStudent" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Etudiant</label>
+            <input type="text" [(ngModel)]="newStudent.fullName" name="fullName" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>CIN</label>
+            <input type="number" [(ngModel)]="newStudent.cin" name="cin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Gender</label>
+            <input type="text" [(ngModel)]="newStudent.gender" name="gender" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Classe</label>
+            <select class="form-control form-control-lg" id="idClass" name="idClass" [(ngModel)]="newidClass">
+                <option *ngFor="let cls of classys" [value]="cls.idClass">
+                    {{cls.nomClass}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addStudent()" class="btn btn-success">Ajouter</button>
+        </div>
+
+    </form>
+</div>

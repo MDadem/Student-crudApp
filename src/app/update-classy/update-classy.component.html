@@ -1,0 +1,21 @@
+<form>
+    <div [hidden] = "ajout" >
+        <label>ID class</label>
+        <input type="text" [(ngModel)]="classy.idClass" name="idClass" class="form-control w-25">
+    </div>
+    <div>
+        <label>Nom Class</label>
+        <input type="text" [(ngModel)]="classy.nomClass" name="nomClass" class="form-control"
+            placeholder="Entrez un nom de class...">
+    </div>
+
+    <div>
+        <label>Description Class</label>
+        <input type="text" [(ngModel)]="classy.descriptionClass" name="descriptionClass" class="form-control"
+            placeholder="Entrez un description de class...">
+    </div>
+    <div class="mt-2">
+        <button type="submit" [disabled]="!classy.nomClass" class="btn btn-success" (click)="saveClassy()">{{ajout ?
+            'Ajouter' : 'Modifier'}}</button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>FullName</th>
+                    <th>CIN</th>
+                    <th>Gender</th>
+                    <th>Classe</th>
+                </tr>
+                <tbody *ngFor="let student of students">
+                    <tr>
+                        <td>{{student.idStudent}}</td>
+                        <td>{{student.fullName}}</td>
+                        <td>{{student.cin}}</td>
+                        <td>{{student.gender}}</td>
+                        <td>{{student.classy?.nomClass}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerStudent(student)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateStudent',student.idStudent]">Modifer</a></td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
